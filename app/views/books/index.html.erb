@@ -1,2 +1,16 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<%= render 'books/info',books: @books %>
+<h2>Books</h2>
+<table>
+  <tr>
+    <th>User</th>
+    <th>Title</th>
+    <th>Opinion</th>
+  </tr>
+  <tr>
+    <% @books.each do |book| %>
+    <td><%= image_tag book.user.get_profile_image %></td>
+    <td><%= book.title %></td>
+    <td><%= book.body %></td>
+    <% end %>
+  </tr>
+</table>
