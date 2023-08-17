@@ -1,1 +1,10 @@
-<%= render 'books/info',books: @books %>
+<h2>Book Detail</h2>
+<table>
+  <tr>
+    <% @book.each do |book| %>
+    <td><%= image_tag book.user.get_profile_image %></td>
+        <%= link_to "<%= book.user.name %>", user_path(user) %>
+    <td><%= link_to "<%= book.title %>", book_path(user_id) %></td>
+    <td><%= book.body%></td>
+  </tr>
+</table>

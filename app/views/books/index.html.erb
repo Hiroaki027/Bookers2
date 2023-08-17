@@ -1,4 +1,3 @@
-<%= render 'books/info',books: @books %>
 <h2>Books</h2>
 <table>
   <tr>
@@ -14,3 +13,36 @@
     <% end %>
   </tr>
 </table>
+
+<h2>User Info</h2>
+<% @users.each do |user| %>
+  <%= image_tag user.get_profile_image %>
+  <table>
+    <tr>
+      <th>Name</th>
+    </tr>
+    <tr>
+      <td><%= user.name %></td>
+    </tr>
+    <tr>
+      <th>Introduction</th>
+    </tr>
+    <tr>
+      <td><%= user.introduction %></td>
+    </tr>
+  </table>
+    <%= link_to "User Edit", edit_user_path(current_user) %>
+<% end %>
+
+<h2>New Book</h2>
+
+<%= form_with model: @book, url: '/books',method: :post do |f| %>
+
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+
+  <h4>Body</h4>
+  <%= f.text_area :body %>
+
+  <%= f.submit 'Create Book' %>
+<% end %>

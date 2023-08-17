@@ -1,0 +1,12 @@
+<h2>Books</h2>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Opinion</th>
+  </tr>
+  <tr>
+     <td><%= image_tag @user.get_profile_image %></td>
+     <td><%= link_to @user_title, book_path %></td>
+     <td><%= @user_body %></td>
+  </tr>
+</table>
