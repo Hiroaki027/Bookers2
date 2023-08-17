@@ -15,24 +15,23 @@
 </table>
 
 <h2>User Info</h2>
-<% @users.each do |user| %>
-  <%= image_tag user.get_profile_image %>
+  <%= image_tag @user.get_profile_image %>
   <table>
     <tr>
       <th>Name</th>
     </tr>
     <tr>
-      <td><%= user.name %></td>
+      <td><%= @user.name %></td>
     </tr>
     <tr>
       <th>Introduction</th>
     </tr>
     <tr>
-      <td><%= user.introduction %></td>
+      <td><%= @user.introduction %></td>
     </tr>
   </table>
     <%= link_to "User Edit", edit_user_path(current_user) %>
-<% end %>
+
 
 <h2>New Book</h2>
 
@@ -41,8 +40,8 @@
   <h4>Title</h4>
   <%= f.text_field :title %>
 
-  <h4>Body</h4>
-  <%= f.text_area :body %>
+  <h4>Opinion</h4>
+  <%= f.text_area :body %><br />
 
   <%= f.submit 'Create Book' %>
 <% end %>

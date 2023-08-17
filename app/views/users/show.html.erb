@@ -6,7 +6,7 @@
   </tr>
   <tr>
      <td><%= image_tag @user.get_profile_image %></td>
-     <td><%= link_to @user_title, book_path %></td>
-     <td><%= @user_body %></td>
+     <td><%= link_to "#{@books_title}", book_path %></td>
+     <td><%=  %></td>
   </tr>
 </table>
