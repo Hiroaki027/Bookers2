@@ -1,12 +1,13 @@
 <h2>Books</h2>
 <table>
   <tr>
+    <th>User</th>
     <th>Title</th>
     <th>Opinion</th>
   </tr>
   <tr>
      <td><%= image_tag @user.get_profile_image %></td>
-     <td><%= link_to "#{@books_title}", book_path %></td>
-     <td><%=  %></td>
+     <td><%= link_to @book.title, book_path(@book) %></td>
+     <td><%= @book.body %></td>
   </tr>
 </table>
