@@ -1,3 +1,8 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
+<%= render 'info', user: @user, book: @book_new %>
 <h2>Book Detail</h2>
 <table>
   <tr>
@@ -5,7 +10,9 @@
         <%= link_to @user.name, user_path(@user) %>
     <td><%= link_to @book.title, book_path(@book) %></td>
     <td><%= @book.body %></td>
+  <% if @user == current_user %>
     <td><%= link_to "Edit", edit_book_path(@book) %></td>
     <td><%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "Are you sure?" %></td>
+  <% end %>
   </tr>
 </table>
