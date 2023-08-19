@@ -7,7 +7,7 @@
   </ul>
 <% end %>
 
-<div class= "col-3">
+<div class= "col-md-3">
   <h2>User Info<i class="fa-solid fa-address-book ml-2"></i></h2>
   <%= image_tag user.get_profile_image %>
   <table class= "table">
@@ -22,12 +22,12 @@
   </table>
 <div class= "row mb-5 pt-3">
     <%= link_to  edit_user_path(user.id), class: 'btn btn-outline-secondary btn-block' do%>
-    <i class="fa-solid fa-user-pen "></i>
+    <i class="fa-solid fa-user-gear"></i>
     <% end %>
 </div>
 
 
-<h2>New Book<i class="fa-solid fa-book-journal-whills ml-2"></i></h2>
+<h2>New book<i class="fa-solid fa-book-journal-whills ml-2"></i></h2>
 
 <%= form_with model: book, url: '/books',method: :post do |f| %>
 
