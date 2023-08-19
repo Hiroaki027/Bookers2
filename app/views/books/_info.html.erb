@@ -7,34 +7,36 @@
   </ul>
 <% end %>
 
-<h2>User Info</h2>
+<div class= "col-3">
+  <h2>User Info<i class="fa-solid fa-address-book ml-2"></i></h2>
   <%= image_tag user.get_profile_image %>
-  <table>
+  <table class= "table">
     <tr>
       <th>Name</th>
-    </tr>
-    <tr>
-      <td><%= user.name %></td>
+      <th><%= user.name %></th>
     </tr>
     <tr>
       <th>Introduction</th>
-    </tr>
-    <tr>
-      <td><%= user.introduction %></td>
+      <th><%= user.introduction %></th>
     </tr>
   </table>
-    <%= link_to "User Edit", edit_user_path(user.id)%>
+<div class= "row mb-5 pt-3">
+    <%= link_to  edit_user_path(user.id), class: 'btn btn-outline-secondary btn-block' do%>
+    <i class="fa-solid fa-user-pen "></i>
+    <% end %>
+</div>
 
 
-<h2>New Book</h2>
+<h2>New Book<i class="fa-solid fa-book-journal-whills ml-2"></i></h2>
 
 <%= form_with model: book, url: '/books',method: :post do |f| %>
 
-  <h4>Title</h4>
+  <h6>Title</h6>
   <%= f.text_field :title %>
-
-  <h4>Opinion</h4>
+  
+  <h6>Opinion</h6>
   <%= f.text_area :body %><br />
 
-  <%= f.submit 'Create Book' %>
+  <%= f.submit 'Create Book', class: 'btn btn-success btn-block mt-2' %>
 <% end %>
+</div>
